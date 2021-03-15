@@ -2,12 +2,13 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <filesystem>
+#include <experimental/filesystem>
 
 #include "IP.h"
 #include "Utils.h"
 
 using StringVec = typename std::vector<std::string>;
+namespace fs = std::experimental::filesystem;
 
 int main(int argc, char** argv)
 {
@@ -24,7 +25,8 @@ int main(int argc, char** argv)
     {
         std::ifstream* in_file = new std::ifstream();
         input_stream = in_file;
-        std::filesystem::path path = std::filesystem::path(std::filesystem::current_path());
+        
+        fs::path path = fs::path(fs::current_path());
         path /= argv[1];
         in_file->open(path);
         

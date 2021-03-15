@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10.0)
 
 project(ip_filter VERSION 0.0.1)
 
+# set(CMAKE_VERBOSE_MAKEFILE ON)
+
 enable_testing()
 
 add_subdirectory(src)
@@ -9,12 +11,12 @@ add_subdirectory(lib/gtest)
 add_subdirectory(test)
 
 
-
 set_target_properties(ip_filter PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
     COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
 )
+
 
 find_program (BASH_PROGRAM bash)
 find_program(UNIT_TEST unit_test)
