@@ -14,7 +14,7 @@ add_subdirectory(test)
 set_target_properties(ip_filter PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
-    COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra"
+    COMPILE_OPTIONS "-Wpedantic;-Wall;-Wextra;-std=c++17"
 )
 
 
